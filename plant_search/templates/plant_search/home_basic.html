@@ -1,0 +1,23 @@
+<!-- templates/plant_search/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Search</title>
+</head>
+<body>
+    <h1>Search for a Plant</h1>
+    <form method="GET" action="{% url 'plant_search' %}">
+        <label for="query">Plant Name:</label>
+        <input type="text" id="query" name="query" placeholder="Enter plant name">
+        <br><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" placeholder="Enter state (optional)">
+        <br><br>
+
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

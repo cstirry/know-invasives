@@ -1,0 +1,19 @@
+# Exclude data files
+*.csv
+data/data.xlsx
+
+# Exclude database and migrations
+*.sqlite3
+
+# Exclude environment files and private keys
+app_venv/
+*.env
+secrets.json
+
+# Exclude purchased theme assets
+static/plant_search/
+templates/plant_search/home.html
+
+# Exclude Python cache files
+__pycache__/
+*.pyc

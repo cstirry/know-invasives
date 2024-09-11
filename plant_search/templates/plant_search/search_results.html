@@ -1,0 +1,35 @@
+<!-- templates/plant_search/search_results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    
+    {% if results %}
+        <ul>
+            {% for plant in results %}
+            <li>
+                <strong>{{ plant.common_name }}</strong> (<em>{{ plant.scientific_name }}</em>)<br>
+                State: {{ plant.state }}<br>
+                Category: {{ plant.category }}<br>
+                Symbol: {{ plant.symbol }}<br>
+                Invasive: 
+                <span style="font-weight: bold; color: {% if plant.invasive %}red{% else %}green{% endif %};">
+                    {{ plant.invasive|yesno:"True,False" }}
+                </span><br>
+            </li>
+            <br>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found. Please try again with different search terms.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'home' %}">Back to search</a>
+</body>
+</html>
