@@ -9,6 +9,7 @@ data/data.xlsx
 app_venv/
 *.env
 secrets.json
+.idea/
 
 # Exclude purchased theme assets
 static/plant_search/
